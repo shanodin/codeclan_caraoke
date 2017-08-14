@@ -40,4 +40,18 @@ class KaraokeTest < MiniTest::Test
     playlist = @room1.playlist
     assert_equal(1, playlist.count)
   end
+
+  def test_correct_song_is_added
+    @room1.add_to_playlist(@song1)
+    song = @room1.playlist[0]
+    title = song.title
+    assert_equal("Radioactive", title)
+  end
+
+  def test_song_has_correct_artist
+    @room1.add_to_playlist(@song1)
+    song = @room1.playlist[0]
+    artist = song.artist
+    assert_equal("Imagine Dragons", artist)
+  end
 end
