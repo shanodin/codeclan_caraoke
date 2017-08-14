@@ -12,6 +12,7 @@ class KaraokeTest < MiniTest::Test
     @guest2 = Guest.new("Rob")
     @room1 = Room.new(1)
     @room2 = Room.new(2)
+    @song1 = Song.new("Radioactive", "Imagine Dragons")
   end
 
   def test_guest_name
@@ -35,7 +36,7 @@ class KaraokeTest < MiniTest::Test
   end
 
   def test_add_song_to_playlist
-    @room1.add_to_playlist("Radioactive")
+    @room1.add_to_playlist(@song1)
     playlist = @room1.playlist
     assert_equal(1, playlist.count)
   end
