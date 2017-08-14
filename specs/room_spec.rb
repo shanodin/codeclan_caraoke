@@ -15,10 +15,6 @@ class KaraokeTest < MiniTest::Test
     @song1 = Song.new("Radioactive", "Imagine Dragons")
   end
 
-  def test_guest_name
-    assert_equal("Jonny", @guest1.name)
-  end
-
   def test_room_number
     assert_equal(1, @room1.room_number)
   end
